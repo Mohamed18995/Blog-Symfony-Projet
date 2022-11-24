@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Bienvenue dans la page article ! ✅</h1>
+
+    <div>
+       <h2>tableau : longeur {{ tableau | length}}</h2>
+       <ul>
+      {% for val in tableau %}
+        <li>{{ val }}</li>
+
+        {# {% if val is even %}
+          paire
+        {% else %}
+          impaire
+        {% endif %} #}
+      {% endfor %} 
+    </ul>
+    <h2>Valeur aleatoire de mon tableau</h2>
+    {{ random(tableau)}}
+    <h2>le plus grand nombre est :</h2>
+    {{max(tableau)}} 
+    <h2>le premier nombre :</h2>
+    {{(tableau[0])}} 
+    </div>
+</div>
+{% endblock %}
